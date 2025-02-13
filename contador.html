@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Amor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5e1da;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ff6f61;
+            color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .counter {
+            background-color: #fff;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+        }
+
+        .button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #e55a4f;
+        }
+
+        .gallery {
+            margin-top: 30px;
+        }
+
+        .gallery img, .video-gallery video {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .loveMessage {
+            font-size: 20px;
+            font-style: italic;
+            margin-top: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>¡Feliz Día Amorcito!</h1>
+    <p>Una pequeña sorpresa para maxisito...</p>
+</header>
+
+<div class="content">
+    <!-- Contador de Días -->
+    <div class="counter">
+        <p>Han pasado <span id="daysCount">0</span> días desde que comenzamos este hermoso viaje juntos.</p>
+    </div>
+
+    <!-- Botón para Generar Mensaje -->
+    <button class="button" onclick="showMessage()">Generar Mensaje de Amor</button>
+    <p id="loveMessage" class="loveMessage"></p>
+
+    <!-- Galería de Imágenes -->
+    <div class="gallery">
+        <h2>Nuestros bebes, no encontre de la viejta</h2>
+        <img src="videos/foto5.jpg" alt="Recuerdo 1">
+        <img src="videos/foto2.jpg" alt="Recuerdo 2">
+        <img src="videos/foto4.jpg" alt="Recuerdo 3">
+        <img src="videos/foto3.jpg" alt="Recuerdo 4">
+        <img src="videos/foto1.jpg" alt="Recuerdo 5">
+        <img src="videos/foto6.jpg" alt="Recuerdo 6">
+        <img src="videos/foto7.jpg" alt="Recuerdo 7">
+    </div>
+
+    <!-- Galería de Videos -->
+    <div class="video-gallery">
+        <h2>Momentos Juntitoss</h2>
+        <video controls>
+            <source src="videos/video1.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+        <video controls>
+            <source src="videos/video2.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+        <video controls>
+            <source src="videos/video7.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+        <video controls>
+            <source src="videos/video5.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+        <video controls>
+            <source src="videos/video3.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+        <video controls>
+            <source src="videos/video6.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+        <video controls>
+            <source src="videos/video4.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+    </div>
+</div>
+
+<footer>
+    <p>Creado con mucho amor para ti. Te amo infinitamente.</p>
+</footer>
+
+<script>
+    // Función para calcular los días de relación
+    const startDate = new Date("2023-06-15"); // Fecha de inicio de la relación
+    const today = new Date();
+    const diffTime = today - startDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    document.getElementById("daysCount").textContent = diffDays;
+
+    // Función para generar mensaje de amor
+    const messages = [
+        "Sos mi razón de sonreír todos los días.",
+        "Amo cada dia a tu lado.",
+        "Te quiero más de lo que las palabras pueden expresar.",
+        "Juntos somos los mas capybaras.",
+        "Mi corazón es tuyo, hoy y siempre.",
+        "Cada día contigo es un regalo, mi amor.",
+        "Gracias por hacerme sentir especial cada momento.",
+        "Gracias por ser mi todo.",
+        "Te amo más de lo que las palabras pueden expresar.",
+        "En cada paso, en cada sonrisa, en cada mirada... mi amor por ti crece.",
+        "No importa lo que pase, siempre estaré a tu lado. ¡Te amo!"
+    ];
+
+    function showMessage() {
+        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        document.getElementById("loveMessage").textContent = randomMessage;
+    }
+</script>
+
+</body>
+</html>
